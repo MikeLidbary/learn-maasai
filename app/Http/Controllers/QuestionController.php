@@ -12,7 +12,7 @@ class QuestionController extends Controller
     public function reply(Request $request)
     {
         $response = trim($request->Body);
-        $whatsapp_number = $request->From;
+        $whatsapp_number = str_replace("whatsapp:","",$request->From);
         $user = User::where('whatsapp_number', $whatsapp_number)->first();
         if (!$user) {
             $user = new User();

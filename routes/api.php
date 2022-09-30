@@ -20,4 +20,4 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
  
-Route::get('/reply', [QuestionController::class, 'reply']);
+Route::post('/reply', [QuestionController::class, 'reply']);
